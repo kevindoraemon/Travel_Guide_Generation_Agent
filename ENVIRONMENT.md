@@ -25,7 +25,7 @@ export AMAP_MAPS_API_KEY="your-key"
 安装开发及测试依赖并执行测试：
 
 ```powershell
-python -m pip install -r requirements-dev.txt
+python -m pip install -r requirements.txt
 python -m pytest -q
 ```
 
