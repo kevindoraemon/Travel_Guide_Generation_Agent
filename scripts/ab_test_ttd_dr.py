@@ -3,7 +3,7 @@
 Variant A (openai_dr):  plan -> agentic two-pass browsing (LLM decides follow-up
                         queries from round-1 gaps) -> one-shot final report.
                         No draft skeleton, no iterative refinement loop.
-Variant B (ttd_dr):     draft skeleton -> retrieval-augmented denoising loop
+Variant B (ttd_dr):     draft skeleton -> evidence-driven denoising loop
                         (coordinator + refine + evaluator + critic) -> final.
 
 Scoring: held-out absolute rubric per report + LLM pairwise blind comparison
@@ -539,7 +539,7 @@ async def _follow_up_query(trip_brief: str, findings: list[str], context: str = 
     digest = "\n\n".join([*findings[-3:], context])[-10000:]
     result = await asyncio.to_thread(
         retry_sync_evaluator,
-        get_chat_model("rag_query"),
+        get_chat_model("research_planner"),
         FollowUpQueries,
         [HumanMessage(content=FOLLOW_UP_QUERY_PROMPT.format(trip_brief=trip_brief, digest=digest))],
     )

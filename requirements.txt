@@ -17,6 +17,5 @@ ipykernel>=7.1.0
 tavily-python>=0.7.17
 PyYAML>=6.0.3
 build>=1.2.1
-qdrant-client[fastembed]>=1.14.2,<2.0.0
 beautifulsoup4>=4.13.0
 paramiko>=5.0.0

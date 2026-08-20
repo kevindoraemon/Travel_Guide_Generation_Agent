@@ -128,30 +128,30 @@ svg.append(path_arrow("M630 240 C 680 320, 720 418, 760 418", "arr-red", "#D0021
 # ═══════ 5. 底部对比 ═══════
 svg.append('<line x1="30" y1="540" x2="1170" y2="540" stroke="#ECF0F1" stroke-width="2"/>')
 
-# RAG 方案
+# 全量上下文基线
 svg.append(rbox(60, 565, 280, 100, r=8, fill="#FDEDEC", opacity=0.6, stroke="#E74C3C"))
-svg.append(text(200, 590, "RAG 检索记忆 (对比)", "compare-title", "#C0392B"))
-svg.append(text(200, 612, "final_k=5 chunks", "compare-text", "#E74C3C"))
-svg.append(text(200, 628, "每次注入 1320 tokens", "compare-text", "#E74C3C"))
+svg.append(text(200, 590, "全量上下文注入 (对比)", "compare-title", "#C0392B"))
+svg.append(text(200, 612, "统一拼接全部记忆层", "compare-text", "#E74C3C"))
+svg.append(text(200, 628, "每个节点读取相同上下文", "compare-text", "#E74C3C"))
 svg.append(text(200, 644, "所有消费者无差别全量注入", "compare-text", "#999"))
-svg.append(text(200, 660, "含 45% 元数据开销", "compare-text", "#999"))
+svg.append(text(200, 660, "高频节点重复携带无关信息", "compare-text", "#999"))
 
-# 箭头 RAG -> 节省
+# 箭头：全量注入 -> 按角色裁剪
 svg.append(arrow(340, 615, 430, 615, "arr-red", "#E74C3C", width=2))
 
 # 节省结果
 svg.append(rbox(430, 565, 300, 100, r=8, fill="#EAFAF1", opacity=0.7, stroke="#27AE60"))
-svg.append(text(580, 590, "Token 节省", "compare-title", "#27AE60"))
-svg.append(text(580, 620, "单次调用: 71% - 91%", "save-num"))
-svg.append(text(580, 645, "完整规划周期 (17次调用):", "compare-text", "#27AE60"))
-svg.append(text(580, 660, "节省 89% token (19970/22440)", "compare-text", "#27AE60"))
+svg.append(text(580, 590, "按角色注入规模", "compare-title", "#27AE60"))
+svg.append(text(580, 620, "121 - 380 tok", "save-num"))
+svg.append(text(580, 645, "Briefing 380 · Writer 275", "compare-text", "#27AE60"))
+svg.append(text(580, 660, "高频 Tool 节点仅 121 tok", "compare-text", "#27AE60"))
 
 # 节省归因
 svg.append(rbox(770, 565, 380, 100, r=8, fill="#F8F9FA", opacity=0.8, stroke="#BDC3C7"))
 svg.append(text(960, 590, "节省归因", "compare-title", "#2C3E50"))
 svg.append(text(960, 610, "① 角色裁剪：避免无关记忆层注入", "compare-text", "#5D6D7E"))
-svg.append(text(960, 628, "② 结构化精简：key-value 替代 chunk JSON", "compare-text", "#5D6D7E"))
-svg.append(text(960, 646, "③ 去元数据：无 scores/ranks/url 开销", "compare-text", "#5D6D7E"))
+svg.append(text(960, 628, "② 结构化精简：仅保留必要 key-value", "compare-text", "#5D6D7E"))
+svg.append(text(960, 646, "③ 轻量状态：避免重复上下文开销", "compare-text", "#5D6D7E"))
 svg.append(text(960, 664, "④ Tool 节点高频调用 (15次)，节省放大", "compare-text", "#5D6D7E"))
 
 svg.append("</svg>")

@@ -93,21 +93,21 @@
 <path d="M630 240 C 680 320, 720 418, 760 418" fill="none" stroke="#D0021B" stroke-width="2.5" marker-end="url(#arr-red)"/>
 <line x1="30" y1="540" x2="1170" y2="540" stroke="#ECF0F1" stroke-width="2"/>
 <rect x="60" y="565" width="280" height="100" rx="8" fill="#FDEDEC" opacity="0.6" stroke="#E74C3C" filter="url(#shadow)"/>
-<text x="200" y="590" text-anchor="#C0392B" class="compare-title" xml:space="preserve">RAG 检索记忆 (对比)</text>
-<text x="200" y="612" text-anchor="#E74C3C" class="compare-text" xml:space="preserve">final_k=5 chunks</text>
-<text x="200" y="628" text-anchor="#E74C3C" class="compare-text" xml:space="preserve">每次注入 1320 tokens</text>
+<text x="200" y="590" text-anchor="#C0392B" class="compare-title" xml:space="preserve">全量上下文注入 (对比)</text>
+<text x="200" y="612" text-anchor="#E74C3C" class="compare-text" xml:space="preserve">统一拼接全部记忆层</text>
+<text x="200" y="628" text-anchor="#E74C3C" class="compare-text" xml:space="preserve">每个节点读取相同上下文</text>
 <text x="200" y="644" text-anchor="#999" class="compare-text" xml:space="preserve">所有消费者无差别全量注入</text>
-<text x="200" y="660" text-anchor="#999" class="compare-text" xml:space="preserve">含 45% 元数据开销</text>
+<text x="200" y="660" text-anchor="#999" class="compare-text" xml:space="preserve">高频节点重复携带无关信息</text>
 <line x1="340" y1="615" x2="430" y2="615" stroke="#E74C3C" stroke-width="2" marker-end="url(#arr-red)"/>
 <rect x="430" y="565" width="300" height="100" rx="8" fill="#EAFAF1" opacity="0.7" stroke="#27AE60" filter="url(#shadow)"/>
-<text x="580" y="590" text-anchor="#27AE60" class="compare-title" xml:space="preserve">Token 节省</text>
-<text x="580" y="620" text-anchor="middle" class="save-num" xml:space="preserve">单次调用: 71% - 91%</text>
-<text x="580" y="645" text-anchor="#27AE60" class="compare-text" xml:space="preserve">完整规划周期 (17次调用):</text>
-<text x="580" y="660" text-anchor="#27AE60" class="compare-text" xml:space="preserve">节省 89% token (19970/22440)</text>
+<text x="580" y="590" text-anchor="#27AE60" class="compare-title" xml:space="preserve">按角色注入规模</text>
+<text x="580" y="620" text-anchor="middle" class="save-num" xml:space="preserve">121 - 380 tok</text>
+<text x="580" y="645" text-anchor="#27AE60" class="compare-text" xml:space="preserve">Briefing 380 · Writer 275</text>
+<text x="580" y="660" text-anchor="#27AE60" class="compare-text" xml:space="preserve">高频 Tool 节点仅 121 tok</text>
 <rect x="770" y="565" width="380" height="100" rx="8" fill="#F8F9FA" opacity="0.8" stroke="#BDC3C7" filter="url(#shadow)"/>
 <text x="960" y="590" text-anchor="#2C3E50" class="compare-title" xml:space="preserve">节省归因</text>
 <text x="960" y="610" text-anchor="#5D6D7E" class="compare-text" xml:space="preserve">① 角色裁剪：避免无关记忆层注入</text>
-<text x="960" y="628" text-anchor="#5D6D7E" class="compare-text" xml:space="preserve">② 结构化精简：key-value 替代 chunk JSON</text>
-<text x="960" y="646" text-anchor="#5D6D7E" class="compare-text" xml:space="preserve">③ 去元数据：无 scores/ranks/url 开销</text>
+<text x="960" y="628" text-anchor="#5D6D7E" class="compare-text" xml:space="preserve">② 结构化精简：仅保留必要 key-value</text>
+<text x="960" y="646" text-anchor="#5D6D7E" class="compare-text" xml:space="preserve">③ 轻量状态：避免重复上下文开销</text>
 <text x="960" y="664" text-anchor="#5D6D7E" class="compare-text" xml:space="preserve">④ Tool 节点高频调用 (15次)，节省放大</text>
 </svg>

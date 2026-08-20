@@ -23,42 +23,8 @@ stages:
     mcp:                      # MCP 服务配置（基于高德地图，提供天气/POI/路径规划等旅游工具）
       server_module: travel_planner.mcp.travel_server   # MCP 服务端模块
       amap_api_key: ${AMAP_MAPS_API_KEY}
-    # rag:
-    #   enabled: false
-    #   qdrant:
-    #     path: data/qdrant
-    #     collection: travel_knowledge
-    #     dense_vector_name: dense
-    #     sparse_vector_name: sparse
-    #   embeddings:
-    #     dense_model: BAAI/bge-small-zh-v1.5
-    #     dense_dimension: 512
-    #     cache_dir: data/models
-    #     batch_size: 16
-    #   chunking:
-    #     chunk_size: 800
-    #     chunk_overlap: 120
-    #   query_processing:
-    #     rewrite_enabled: true
-    #     metadata_extraction_enabled: true
-    #     role: rag_query
-    #   retrieval:
-    #     dense_top_k: 20
-    #     sparse_top_k: 20
-    #     rrf_k: 60
-    #     reranker_top_k: 8
-    #     final_k: 5
-    #   deduplication:
-    #     by_document: true
-    #     similarity_threshold: 0.86
-    #   reranker:
-    #     library_path: 'D:\Liu Minghao\西电\简历\源码\车书问答系统源码\RAG-Retrieval'
-    #     model_path: 'D:\Liu Minghao\西电\简历\源码\车书问答系统源码\RAG-Retrieval\rag_retrieval\train\reranker\output\bert\runs\checkpoints\checkpoint_0'
-    #     device: cpu
-    #     dtype: fp32
-    #     max_length: 512
     roles:
-      rag_query:
+      research_planner:
         backend: openai
         handle: glm-5.1
         max_tokens: 800

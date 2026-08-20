@@ -15,7 +15,7 @@ import paramiko
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 LOCAL_COLLECTOR = PROJECT_ROOT / "scripts" / "collect_travel_itineraries.py"
-REMOTE_DIR = "/root/autodl-tmp/travel-rag-collection"
+REMOTE_DIR = "/root/autodl-tmp/travel-guide-collection"
 REMOTE_SCRIPT = f"{REMOTE_DIR}/collect_travel_itineraries.py"
 REMOTE_OUTPUT = f"{REMOTE_DIR}/travel_itineraries_50.jsonl"
 REMOTE_REPORT = f"{REMOTE_DIR}/travel_itineraries_50.report.json"

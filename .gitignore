@@ -13,7 +13,7 @@ reports/
 results/
 *.log
 
-# Local databases and downloaded models
+# Local runtime state and downloaded models
 data/qdrant/
 data/models/
 data/memory/

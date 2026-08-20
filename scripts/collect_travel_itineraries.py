@@ -29,7 +29,7 @@ from bs4 import BeautifulSoup
 
 USER_AGENT = (
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/126.0 Safari/537.36 TravelRAGCollector/1.0"
+    "(KHTML, like Gecko) Chrome/126.0 Safari/537.36 TravelGuideCollector/1.0"
 )
 
 GOOGLE_QUERIES = [
@@ -384,7 +384,7 @@ class Collector:
                 "content_hash": content_hash,
                 "http_status": status,
                 "content_length": len(content),
-                "collector": "travel_rag_collector_v1",
+                "collector": "travel_guide_collector_v1",
             },
             "fetched_at": utc_now(),
         }

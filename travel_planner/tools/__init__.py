@@ -9,4 +9,3 @@ from travel_planner.tools.mcp_tools import (
     clear_travel_mcp_tools_cache,
     get_travel_mcp_tools,
 )
-from travel_planner.rag.tools import _travel_knowledge_search_tool
