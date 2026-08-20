@@ -1,0 +1,19 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest_tmp*/
+.pytest-tmp/
+.ttd_dr_backup_target/
+.ipynb_checkpoints/
+outputs/
+reports/
+results/
+*.log
+
+# Local databases and downloaded models
+data/qdrant/
+data/models/
+data/memory/

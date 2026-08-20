@@ -1,0 +1,26 @@
+{
+  "started_and_completed_at": "2026-07-17T09:13:25.255005+00:00",
+  "requested": {
+    "google": 1,
+    "baidu": 1
+  },
+  "collected": {
+    "google": 0,
+    "baidu": 1
+  },
+  "total": 1,
+  "unique_domains": 1,
+  "stats": {
+    "baidu_accepted": 1,
+    "baidu_candidates_attempted": 13,
+    "baidu_search_results": 16,
+    "google_search_error": 2,
+    "google_search_results": 0,
+    "http_403": 1,
+    "http_429": 2,
+    "http_432": 4,
+    "invalid_final_url": 3,
+    "robots_denied": 4
+  },
+  "output": "data\\collector_smoke.jsonl"
+}
